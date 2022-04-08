@@ -22,3 +22,37 @@ html {
 *, *::before, *::after{
     box-sizing: inherit;
 }
+
+body{
+    font-family: montserrat;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #102746;
+}
+
+.wrapper {
+    max-width: 1060px;
+    margin: 0 auto; /*выставляет див с этим классом по центру в его родителе*/
+}
+header {
+    background-color: black;
+}
+.header__wrapper {
+    display: flex;
+    flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.header__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header__item {
+    margin-right: 82px;
+}
+.header__item:last-child { /*убрали отсуп у последнего элемента списка*/
+    margin-right: 0;
+}
