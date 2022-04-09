@@ -36,14 +36,21 @@ body{
     max-width: 1060px;
     margin: 0 auto; /*выставляет див с этим классом по центру в его родителе*/
 }
+
+/*Header styles start*/
+
 header {
-    background-color: black;
+    position: fixed; /*вытаскиваем его как бы из общего слоя он независим*/
+    top: 0; /*прибиваем header  к верхней части экрана*/
+    left: 0; /*прибиваем header  к левой части экрана*/
+    width: 100%; /*что бы он занимал всегда всю ширину экрана*/
 }
 .header__wrapper {
     display: flex;
     flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
     align-items: flex-end;
     justify-content: space-between;
+    padding-top: 56px;
 }
 .header__list {
     display: flex;
@@ -56,3 +63,75 @@ header {
 .header__item:last-child { /*убрали отсуп у последнего элемента списка*/
     margin-right: 0;
 }
+.header__link {
+    font-size: 18px;
+    line-height: 24px; /*межстрочный интервал*/
+    color: white;
+    text-decoration: none; /*убираем подчеркивание ссылки*/
+}
+/*hover(наведение мышкой) focus(наведение кнопкой Tab) active(когда по ссылке кликнули)*/
+.header__link:hover, .header__link:focus, .header__link:active{
+    opacity: 0.75;
+}
+/*Header styles end*/
+
+/*Intro styles start*/
+
+.intro{
+    min-height: 100vh;
+    background: url("../img/intro-bg.jpg") no-repeat;
+    background-size: cover; /*картинка при любых размерах покрывает все пространство*/
+    padding-top: 263px; /**/
+}
+.intro__title{
+    max-width: 619px;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 60px;
+    color: white;
+    margin-bottom: 22px;
+}
+.intro__subtitle{
+    max-width: 546px;
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 59px;
+}
+.search-form__info{
+    display: flex;
+    flex-wrap: wrap;
+}
+.search-form__field{
+    width: 297px; /*жестко задаем ширину импута, что бы при из размера страницы импуты не сжимались*/
+    /*transparent убираем белый фон инпута, left 6px - прижат к левому краю, и к верху с отступом в 6px */
+    background: transparent url("../img/svg/input-ico.svg") no-repeat left 6px;
+    background-size: 20px; /*фиксируем размер окружности*/
+    border: 0; /*убираем границы импута*/
+    border-bottom: 2px solid #BFC0C5; /*добавили одну границу снизу*/
+    margin-right: 60px;
+    padding-left: 43px;
+    padding-bottom: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+.search-form__field::placeholder{
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.search-form__submit{
+    padding: 15px 39px; /*снизу и сверху 15 слева и справа 39*/
+    text-transform: uppercase; /*все буквы заглавные*/
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+    background: #1B7DFF;
+    border: 0;
+}
+.search-form__submit:hover, .search-form__submit:focus, .search-form__submit:active{
+    background: #1365d4;
+}
+/*Intro styles end*/
